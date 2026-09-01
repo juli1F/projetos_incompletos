@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Música & Empreendedorismo | Empreenda+</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilo_empreendedorismo.css">
+
+
+</head>
+
+<body class="pagina-musicas">
+
+    <!-- ==============================
+         FUNDO DECORATIVO
+    =============================== -->
+
+    <div class="floating-orb orb-musica-1"></div>
+    <div class="floating-orb orb-musica-2"></div>
+    <div class="floating-orb orb-musica-3"></div>
+
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+
+    <header class="topo">
+
+        <a href="Home.html" class="logo">
+
+            <span class="logo-icon">✦</span>
+
+            <span>
+                Empreenda<span class="logo-plus">+</span>
+            </span>
+
+        </a>
+
+
+        <nav class="menu">
+
+            <a href="Home.html">
+                Início
+            </a>
+
+            <a href="cursos.html">
+                Cursos
+            </a>
+
+            <a href="mulheres.html">
+                Inspirações
+            </a>
+
+            <a href="musicas.html" class="ativo">
+                Música
+            </a>
+
+        </nav>
+
+
+        <div class="acoes-header">
+
+            <button class="botao-pesquisa" onclick="document.getElementById('playlist').scrollIntoView({behavior:'smooth'})">
+
+                <span>⌕</span>
+
+                <span class="texto-pesquisa">
+                    Explorar
+                </span>
+
+            </button>
+
+
+            <button class="botao-perfil">
+                JD
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         HERO
+    =============================== -->
+
+    <main>
+
+        <section class="hero-musicas">
+
+
+            <div class="hero-musica-texto">
+
+                <div class="tag">
+
+                    <span class="tag-bolinha"></span> PLAY • THINK • CREATE
+
+                </div>
+
+
+                <h1>
+
+                    Algumas ideias
+
+                    <span>
+                        precisam de trilha sonora.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Descubra músicas que despertam coragem, criatividade, foco e persistência para acompanhar cada fase da sua jornada.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#playlist" class="btn-musica principal">
+
+                        Explorar playlist
+
+                        <span>
+                            ↓
+                        </span>
+
+                    </a>
+
+
+                    <button class="btn-musica secundario" onclick="ativarExperiencia()">
+
+                        Ativar experiência
+
+                        ✦
+
+                    </button>
+
+                </div>
+
+
+                <div class="music-stats">
+
+                    <div>
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            músicas
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            03
+                        </strong>
+
+                        <span>
+                            momentos
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ∞
+                        </strong>
+
+                        <span>
+                            possibilidades
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 VISUAL DO VINIL
+            =============================== -->
+
+            <div class="vinil-area">
+
+
+                <div class="visual-glow"></div>
+
+
+                <div class="vinil">
+
+                    <div class="vinil-linha linha-1"></div>
+                    <div class="vinil-linha linha-2"></div>
+                    <div class="vinil-linha linha-3"></div>
+
+                    <div class="vinil-centro">
+
+                        <span>
+                            +
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vinil-reflexo"></div>
+
+
+                <div class="nota nota-1">
+                    ♪
+                </div>
+
+                <div class="nota nota-2">
+                    ♫
+                </div>
+
+                <div class="nota nota-3">
+                    ♪
+                </div>
+
+                <div class="nota nota-4">
+                    ♬
+                </div>
+
+
+                <div class="floating-label label-1">
+                    FOCO
+                </div>
+
+                <div class="floating-label label-2">
+                    CORAGEM
+                </div>
+
+                <div class="floating-label label-3">
+                    CRIATIVIDADE
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             FRASE
+        =============================== -->
+
+        <section class="frase-musical">
+
+            <div class="frase-numero">
+                01
+            </div>
+
+            <blockquote>
+
+                “A música não cria apenas emoção. Ela pode criar coragem para começar.”
+
+            </blockquote>
+
+            <span>
+                — Empreenda+
+            </span>
+
+        </section>
+
+
+        <!-- ==============================
+             PLAYLIST
+        =============================== -->
+
+        <section class="secao playlist" id="playlist">
+
+
+            <div class="cabecalho-playlist">
+
+                <div>
+
+                    <span class="mini-titulo">
+                        PARA DAR O PLAY NAS SUAS IDEIAS
+                    </span>
+
+                    <h2>
+                        Playlist para empreendedores
+                    </h2>
+
+                    <p class="playlist-description">
+                        Cinco músicas para cinco estados de espírito.
+                    </p>
+
+                </div>
+
+
+                <div class="contador-playlist">
+
+                    <span class="pulse-dot"></span> 05 músicas
+
+                </div>
+
+            </div>
+
+
+            <div class="lista-musicas">
+
+
+                <!-- MÚSICA 01 -->
+
+                <article class="musica-card destaque-musica">
+
+                    <div class="musica-capa capa-laranja">
+
+                        <span class="musica-numero">
+                            01
+                        </span>
+
+                        <div class="musica-simbolo">
+                            ▶
+                        </div>
+
+                        <div class="capa-brilho"></div>
+
+                    </div>
+
+
+                    <div class="musica-info">
+
+                        <div class="musica-tag">
+                            CORAGEM
+                        </div>
+
+                        <h3>
+                            The Climb
+                        </h3>
+
+                        <p>
+                            Miley Cyrus
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-motivo">
+
+                        <span>
+                            POR QUE INSPIRA?
+                        </span>
+
+                        <p>
+                            Crescimento não acontece de uma vez. O processo também faz parte da conquista.
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-tempo">
+                        3:55
+                    </div>
+
+
+                    <button class="play-button" onclick="tocarMusica(this)">
+
+                        ▶
+
+                    </button>
+
+                </article>
+
+
+                <!-- MÚSICA 02 -->
+
+                <article class="musica-card">
+
+                    <div class="musica-capa capa-azul">
+
+                        <span class="musica-numero">
+                            02
+                        </span>
+
+                        <div class="musica-simbolo">
+                            ▶
+                        </div>
+
+                        <div class="capa-brilho"></div>
+
+                    </div>
+
+
+                    <div class="musica-info">
+
+                        <div class="musica-tag">
+                            AMBIÇÃO
+                        </div>
+
+                        <h3>
+                            Hall of Fame
+                        </h3>
+
+                        <p>
+                            The Script
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-motivo">
+
+                        <span>
+                            POR QUE INSPIRA?
+                        </span>
+
+                        <p>
+                            Para lembrar que grandes objetivos exigem atitude e consistência.
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-tempo">
+                        3:22
+                    </div>
+
+
+                    <button class="play-button" onclick="tocarMusica(this)">
+
+                        ▶
+
+                    </button>
+
+                </article>
+
+
+                <!-- MÚSICA 03 -->
+
+                <article class="musica-card">
+
+                    <div class="musica-capa capa-roxa">
+
+                        <span class="musica-numero">
+                            03
+                        </span>
+
+                        <div class="musica-simbolo">
+                            ▶
+                        </div>
+
+                        <div class="capa-brilho"></div>
+
+                    </div>
+
+
+                    <div class="musica-info">
+
+                        <div class="musica-tag">
+                            CONFIANÇA
+                        </div>
+
+                        <h3>
+                            Unstoppable
+                        </h3>
+
+                        <p>
+                            Sia
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-motivo">
+
+                        <span>
+                            POR QUE INSPIRA?
+                        </span>
+
+                        <p>
+                            Ideal para entrar naquele estado mental de confiança antes de agir.
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-tempo">
+                        3:37
+                    </div>
+
+
+                    <button class="play-button" onclick="tocarMusica(this)">
+
+                        ▶
+
+                    </button>
+
+                </article>
+
+
+                <!-- MÚSICA 04 -->
+
+                <article class="musica-card">
+
+                    <div class="musica-capa capa-verde">
+
+                        <span class="musica-numero">
+                            04
+                        </span>
+
+                        <div class="musica-simbolo">
+                            ▶
+                        </div>
+
+                        <div class="capa-brilho"></div>
+
+                    </div>
+
+
+                    <div class="musica-info">
+
+                        <div class="musica-tag">
+                            ENERGIA
+                        </div>
+
+                        <h3>
+                            On Top of the World
+                        </h3>
+
+                        <p>
+                            Imagine Dragons
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-motivo">
+
+                        <span>
+                            POR QUE INSPIRA?
+                        </span>
+
+                        <p>
+                            Uma trilha leve para celebrar pequenas vitórias ao longo do caminho.
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-tempo">
+                        3:12
+                    </div>
+
+
+                    <button class="play-button" onclick="tocarMusica(this)">
+
+                        ▶
+
+                    </button>
+
+                </article>
+
+
+                <!-- MÚSICA 05 -->
+
+                <article class="musica-card">
+
+                    <div class="musica-capa capa-pink">
+
+                        <span class="musica-numero">
+                            05
+                        </span>
+
+                        <div class="musica-simbolo">
+                            ▶
+                        </div>
+
+                        <div class="capa-brilho"></div>
+
+                    </div>
+
+
+                    <div class="musica-info">
+
+                        <div class="musica-tag">
+                            SUPERAÇÃO
+                        </div>
+
+                        <h3>
+                            Roar
+                        </h3>
+
+                        <p>
+                            Katy Perry
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-motivo">
+
+                        <span>
+                            POR QUE INSPIRA?
+                        </span>
+
+                        <p>
+                            Para lembrar da sua força mesmo quando as coisas não saem como planejado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="musica-tempo">
+                        3:43
+                    </div>
+
+
+                    <button class="play-button" onclick="tocarMusica(this)">
+
+                        ▶
+
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             MOMENTOS
+        =============================== -->
+
+        <section class="momento">
+
+
+            <div class="momento-conteudo">
+
+                <span class="mini-titulo">
+                    CADA MOMENTO TEM UMA TRILHA
+                </span>
+
+                <h2>
+                    Escolha o clima da sua jornada.
+                </h2>
+
+                <p>
+                    O mesmo objetivo pode pedir uma energia diferente em cada etapa.
+                </p>
+
+            </div>
+
+
+            <div class="momentos-grid">
+
+
+                <div class="momento-card">
+
+                    <div class="momento-top">
+
+                        <span class="momento-icon">
+                            ☀
+                        </span>
+
+                        <span class="momento-numero">
+                            01
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Começar
+                    </h3>
+
+                    <p>
+                        Para aqueles momentos em que você precisa simplesmente dar o primeiro passo.
+                    </p>
+
+                    <span class="momento-musica">
+                        ▶ Start Again
+                    </span>
+
+                </div>
+
+
+                <div class="momento-card ativo-momento">
+
+                    <div class="momento-top">
+
+                        <span class="momento-icon">
+                            ⚡
+                        </span>
+
+                        <span class="momento-numero">
+                            02
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Foco
+                    </h3>
+
+                    <p>
+                        Quando é hora de desligar distrações e colocar a mão na massa.
+                    </p>
+
+                    <span class="momento-musica">
+                        ▶ Don't Stop Me Now
+                    </span>
+
+                </div>
+
+
+                <div class="momento-card">
+
+                    <div class="momento-top">
+
+                        <span class="momento-icon">
+                            ☾
+                        </span>
+
+                        <span class="momento-numero">
+                            03
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Refletir
+                    </h3>
+
+                    <p>
+                        Para analisar resultados, planejar e pensar nos próximos passos.
+                    </p>
+
+                    <span class="momento-musica">
+                        ▶ Viva La Vida
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             INSIGHT
+        =============================== -->
+
+        <section class="secao insight-musical">
+
+            <div class="insight-large">
+
+                <div class="insight-large-top">
+
+                    <span>
+                        IDEIA DO DIA
+                    </span>
+
+                    <strong>
+                        02 / 04
+                    </strong>
+
+                </div>
+
+
+                <div class="insight-icon-large">
+                    ♪
+                </div>
+
+
+                <h2>
+                    Sua playlist também pode mudar seu mindset.
+                </h2>
+
+
+                <p>
+                    Música pode acompanhar diferentes momentos do trabalho: concentração, criatividade, movimento, celebração ou reflexão. Escolha sua trilha de acordo com a tarefa.
+                </p>
+
+
+                <a href="#playlist">
+                    Montar minha playlist →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CTA
+        =============================== -->
+
+        <section class="cta-musica">
+
+            <div>
+
+                <span class="mini-titulo">
+                    DÊ O PLAY NA SUA IDEIA
+                </span>
+
+                <h2>
+                    Qual música vai acompanhar sua próxima conquista?
+                </h2>
+
+                <p>
+                    Aprenda. Crie. Tente. Erre. Continue. E coloque uma música.
+                </p>
+
+            </div>
+
+
+            <div class="onda">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            ✦ Empreenda+
+        </div>
+
+        <p>
+            Ideias grandes começam com conhecimento.
+        </p>
+
+        <span>
+            © 2026 Empreenda+
+        </span>
+
+    </footer>
+
+
+    <script>
+        function tocarMusica(botao) {
+
+            const card = botao.closest(".musica-card");
+
+            const botoes =
+                document.querySelectorAll(".play-button");
+
+            botoes.forEach(item => {
+
+                item.classList.remove("tocando");
+                item.textContent = "▶";
+
+            });
+
+
+            botao.classList.add("tocando");
+
+            botao.textContent = "Ⅱ";
+
+            card.classList.add("musica-tocando");
+
+
+            setTimeout(() => {
+
+                botao.classList.remove("tocando");
+                botao.textContent = "▶";
+
+                card.classList.remove("musica-tocando");
+
+            }, 3000);
+
+        }
+
+
+        function ativarExperiencia() {
+
+            document.body.classList.toggle("experiencia-ativa");
+
+            const botao =
+                document.querySelector(".btn-musica.secundario");
+
+            if (
+                document.body.classList.contains("experiencia-ativa")
+            ) {
+
+                botao.innerHTML =
+                    "Experiência ativada ✦";
+
+            } else {
+
+                botao.innerHTML =
+                    "Ativar experiência ✦";
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

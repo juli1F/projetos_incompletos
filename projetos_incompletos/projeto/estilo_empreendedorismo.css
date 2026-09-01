@@ -1,0 +1,2654 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Inter", Arial, sans-serif;
+    color: #40373c;
+    background: radial-gradient( circle at 7% 4%, rgba(255, 255, 255, .72), transparent 22%), radial-gradient( circle at 93% 87%, rgba(255, 255, 255, .34), transparent 24%), linear-gradient( 135deg, #efa4c4 0%, #f2aec9 28%, #f5bcc9 53%, #f7cfc2 77%, #f6ddd0 100%);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+::selection {
+    background: #f3bfd0;
+    color: #40373c;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --rosa-50: #fff7f9;
+    --rosa-100: #fcecef;
+    --rosa-200: #f8d5e0;
+    --rosa-300: #efb6c7;
+    --rosa-400: #e391ae;
+    --rosa-500: #d16e92;
+    --rosa-600: #b95b7d;
+    --lilac-50: #faf7fc;
+    --lilac-100: #f2eaf5;
+    --lilac-200: #e5d6e9;
+    --lilac-300: #c9a4d1;
+    --lilac-400: #b38bc0;
+    --lilac-500: #9670a4;
+    --lilac-600: #7d5b8c;
+    --creme: #fffdf9;
+    --creme-2: #fff7ee;
+    --creme-3: #f8ead5;
+    --ink: #3d3439;
+    --ink-soft: #5e5158;
+    --gray: #8d7f86;
+    --gray-light: #b2a5ab;
+    --white: #ffffff;
+    --line: rgba(83, 61, 72, .12);
+    --line-strong: rgba(83, 61, 72, .20);
+    --shadow-xs: 0 5px 18px rgba(74, 45, 59, .05);
+    --shadow-sm: 0 12px 34px rgba(74, 45, 59, .08);
+    --shadow-md: 0 20px 55px rgba(74, 45, 59, .12);
+    --shadow-lg: 0 35px 100px rgba(53, 31, 42, .18);
+    --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================================
+   DECORAÇÃO DO FUNDO
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    right: -320px;
+    top: -330px;
+    border: 60px solid rgba(220, 109, 157, .16);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 520px;
+    height: 520px;
+    left: -340px;
+    bottom: -350px;
+    border: 48px solid rgba(255, 247, 207, .26);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   FLOATING ORBS
+========================================================= */
+
+.floating-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 0;
+    animation: floatingOrb 8s ease-in-out infinite;
+}
+
+.orb-musica-1 {
+    width: 130px;
+    height: 130px;
+    right: 5%;
+    top: 18%;
+    background: rgba(197, 130, 216, .18);
+}
+
+.orb-musica-2 {
+    width: 90px;
+    height: 90px;
+    left: 5%;
+    top: 55%;
+    background: rgba(234, 111, 158, .16);
+    animation-delay: 1.5s;
+}
+
+.orb-musica-3 {
+    width: 70px;
+    height: 70px;
+    right: 12%;
+    bottom: 8%;
+    background: rgba(244, 196, 133, .21);
+    animation-delay: 3s;
+}
+
+@keyframes floatingOrb {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -24px, 0);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topo {
+    position: relative;
+    z-index: 20;
+    width: min(1450px, calc(100% - 46px));
+    min-height: 86px;
+    margin: 20px auto;
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255, 255, 255, .48);
+    border: 1px solid rgba(255, 255, 255, .72);
+    backdrop-filter: blur(18px);
+    border-radius: 27px;
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    color: white;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 22px;
+    box-shadow: 0 9px 24px rgba(113, 70, 94, .18);
+    transition: transform .35s var(--ease);
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(12deg) scale(1.06);
+}
+
+.logo-plus {
+    color: var(--rosa-500);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 31px;
+}
+
+.menu a {
+    position: relative;
+    color: #75686f;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color .25s ease, transform .25s ease;
+}
+
+.menu a:hover {
+    color: var(--ink);
+    transform: translateY(-1px);
+}
+
+.menu a.ativo {
+    color: var(--ink);
+}
+
+.menu a.ativo::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(209, 110, 146, .35);
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.acoes-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.botao-pesquisa {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .80);
+    color: #74666e;
+    font-size: 10px;
+    font-weight: 800;
+    transition: .25s var(--ease);
+}
+
+.botao-pesquisa:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xs);
+    background: #fff;
+}
+
+.botao-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--ink), #60535a);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    box-shadow: 0 7px 17px rgba(45, 33, 39, .14);
+    transition: .25s var(--ease);
+}
+
+.botao-perfil:hover {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   HERO MÚSICA
+========================================================= */
+
+.hero-musicas {
+    position: relative;
+    z-index: 1;
+    width: min(1400px, calc(100% - 64px));
+    min-height: 620px;
+    margin: 20px auto 80px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .68);
+    border-radius: 38px;
+    background: radial-gradient( circle at 75% 25%, rgba(207, 143, 226, .31), transparent 27%), radial-gradient( circle at 18% 70%, rgba(218, 106, 152, .23), transparent 30%), linear-gradient( 145deg, #fffaf5, #f6e9ee);
+    box-shadow: var(--shadow-lg);
+    animation: pageEnter .75s var(--ease) both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   HERO TEXTO
+========================================================= */
+
+.hero-musica-texto {
+    position: relative;
+    padding: 75px 65px;
+    overflow: hidden;
+}
+
+.hero-musica-texto::before {
+    content: "MUSIC";
+    position: absolute;
+    right: -50px;
+    bottom: -60px;
+    color: rgba(161, 111, 175, .065);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 185px;
+    line-height: .8;
+    pointer-events: none;
+}
+
+.hero-musica-texto::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: 16%;
+    top: -150px;
+    border: 24px solid rgba(179, 139, 192, .10);
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.tag {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 31px;
+    padding: 0 12px;
+    border: 1px solid rgba(108, 73, 90, .11);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .70);
+    color: var(--rosa-600);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.tag-bolinha {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    box-shadow: 0 0 10px rgba(209, 110, 146, .38);
+    animation: pulseTag 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseTag {
+    50% {
+        transform: scale(1.4);
+        opacity: .65;
+    }
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-musica-texto h1 {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin-top: 21px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(55px, 6vw, 82px);
+    font-weight: 400;
+    line-height: .91;
+    letter-spacing: -.035em;
+}
+
+.hero-musica-texto h1 span {
+    display: block;
+    color: var(--rosa-500);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero-musica-texto>p {
+    position: relative;
+    z-index: 2;
+    max-width: 595px;
+    margin-top: 24px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn-musica {
+    min-height: 45px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 17px;
+    border-radius: 14px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    transition: .3s var(--ease);
+}
+
+.btn-musica.principal {
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    color: white;
+    box-shadow: 0 12px 26px rgba(160, 104, 137, .21);
+}
+
+.btn-musica.principal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 17px 34px rgba(160, 104, 137, .28);
+}
+
+.btn-musica.secundario {
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, .70);
+    color: var(--ink-soft);
+}
+
+.btn-musica.secundario:hover {
+    transform: translateY(-4px);
+    background: #fff;
+    box-shadow: var(--shadow-xs);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.music-stats {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 32px;
+    margin-top: 43px;
+}
+
+.music-stats div {
+    padding-left: 13px;
+    border-left: 1px solid var(--line-strong);
+}
+
+.music-stats strong {
+    display: block;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.music-stats span {
+    display: block;
+    margin-top: 2px;
+    color: var(--gray);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   ÁREA DO VINIL
+========================================================= */
+
+.vinil-area {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: radial-gradient( circle at 52% 48%, rgba(255, 255, 255, .30), transparent 28%), linear-gradient( 145deg, #e8d8ec, #efc5d1 49%, #f4d6c3);
+}
+
+.vinil-area::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 43px solid rgba(255, 255, 255, .17);
+    right: -190px;
+    top: -200px;
+}
+
+.vinil-area::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 30px solid rgba(255, 255, 255, .14);
+    left: -135px;
+    bottom: -145px;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.visual-glow {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient( circle, rgba(208, 131, 215, .40), transparent 70%);
+    filter: blur(15px);
+    animation: visualGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes visualGlow {
+    to {
+        transform: scale(1.15);
+        opacity: .75;
+    }
+}
+
+
+/* =========================================================
+   VINIL
+========================================================= */
+
+.vinil {
+    position: relative;
+    z-index: 3;
+    width: 370px;
+    height: 370px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: repeating-radial-gradient( circle at center, #514651 0 3px, #2e292f 4px 6px);
+    border: 9px solid rgba(255, 255, 255, .34);
+    box-shadow: 0 45px 85px rgba(63, 42, 53, .24), inset 0 0 45px rgba(255, 255, 255, .06);
+    animation: girarVinil 10s linear infinite;
+}
+
+.vinil::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 50%;
+}
+
+.vinil-centro {
+    position: relative;
+    z-index: 5;
+    width: 90px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    border: 7px solid rgba(255, 255, 255, .65);
+    box-shadow: 0 10px 28px rgba(45, 30, 39, .28);
+}
+
+.vinil-centro::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--creme);
+    border: 3px solid rgba(60, 45, 52, .20);
+}
+
+.vinil-centro span {
+    position: relative;
+    z-index: 2;
+    color: transparent;
+}
+
+.vinil-linha {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .13);
+}
+
+.linha-1 {
+    width: 130px;
+    height: 130px;
+}
+
+.linha-2 {
+    width: 215px;
+    height: 215px;
+}
+
+.linha-3 {
+    width: 290px;
+    height: 290px;
+}
+
+@keyframes girarVinil {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   VINIL REFLECTION
+========================================================= */
+
+.vinil-reflexo {
+    position: absolute;
+    z-index: 4;
+    width: 110px;
+    height: 170px;
+    background: linear-gradient( 120deg, transparent, rgba(255, 255, 255, .10), transparent);
+    transform: rotate(30deg) translateX(-90px);
+    animation: reflexoVinil 5s ease-in-out infinite;
+}
+
+@keyframes reflexoVinil {
+    0% {
+        opacity: 0;
+        transform: rotate(30deg) translateX(-150px);
+    }
+    45% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(30deg) translateX(170px);
+    }
+}
+
+
+/* =========================================================
+   NOTAS
+========================================================= */
+
+.nota {
+    position: absolute;
+    z-index: 7;
+    color: rgba(100, 73, 105, .48);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 48px;
+    animation: notaFlutua 4s ease-in-out infinite;
+}
+
+.nota-1 {
+    top: 16%;
+    left: 17%;
+}
+
+.nota-2 {
+    top: 29%;
+    right: 14%;
+    animation-delay: 1s;
+}
+
+.nota-3 {
+    bottom: 18%;
+    left: 20%;
+    animation-delay: 1.8s;
+}
+
+.nota-4 {
+    bottom: 27%;
+    right: 20%;
+    font-size: 31px;
+    animation-delay: 2.5s;
+}
+
+@keyframes notaFlutua {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(9deg);
+    }
+}
+
+
+/* =========================================================
+   FLOATING LABELS
+========================================================= */
+
+.floating-label {
+    position: absolute;
+    z-index: 6;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .30);
+    backdrop-filter: blur(8px);
+    color: rgba(70, 56, 64, .62);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .10em;
+}
+
+.label-1 {
+    left: 10%;
+    top: 37%;
+}
+
+.label-2 {
+    right: 10%;
+    top: 51%;
+}
+
+.label-3 {
+    right: 17%;
+    bottom: 18%;
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.frase-musical {
+    width: min(1000px, calc(100% - 64px));
+    margin: 0 auto 110px;
+    text-align: center;
+}
+
+.frase-numero {
+    color: var(--lilac-500);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .15em;
+    margin-bottom: 20px;
+}
+
+.frase-musical blockquote {
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(31px, 4vw, 51px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+}
+
+.frase-musical>span {
+    display: block;
+    margin-top: 22px;
+    color: var(--gray);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.secao {
+    width: min(1400px, calc(100% - 64px));
+    margin: 0 auto 100px;
+}
+
+
+/* =========================================================
+   CABEÇALHO PLAYLIST
+========================================================= */
+
+.cabecalho-playlist {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.mini-titulo {
+    color: var(--lilac-600);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .17em;
+}
+
+.cabecalho-playlist h2 {
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(36px, 4vw, 49px);
+    font-weight: 400;
+    margin-top: 8px;
+    line-height: 1;
+}
+
+.playlist-description {
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.contador-playlist {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .62);
+    color: var(--ink-soft);
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rosa-500);
+    box-shadow: 0 0 0 5px rgba(209, 110, 146, .10);
+    animation: pulseTag 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LISTA DE MÚSICAS
+========================================================= */
+
+.lista-musicas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.musica-card {
+    position: relative;
+    min-height: 112px;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 92px 1fr 1.2fr 50px 40px;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .63);
+    transition: .35s var(--ease);
+    overflow: hidden;
+}
+
+.musica-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient( 180deg, var(--rosa-500), var(--lilac-500));
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.musica-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, .92);
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(100, 73, 84, .17);
+}
+
+.musica-card:hover::before {
+    opacity: 1;
+}
+
+.destaque-musica {
+    background: linear-gradient( 90deg, rgba(255, 255, 255, .88), rgba(250, 239, 245, .80));
+    border-color: rgba(160, 111, 136, .16);
+    box-shadow: 0 13px 38px rgba(94, 57, 74, .08);
+}
+
+.musica-tocando {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 18px 46px rgba(113, 71, 96, .15);
+}
+
+
+/* =========================================================
+   CAPAS
+========================================================= */
+
+.musica-capa {
+    position: relative;
+    height: 86px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 17px;
+    color: white;
+}
+
+.musica-capa::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    right: -80px;
+    top: -85px;
+    border: 20px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+}
+
+.musica-capa::after {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    left: -40px;
+    bottom: -45px;
+    border: 13px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+}
+
+.capa-laranja {
+    background: linear-gradient( 135deg, #a95f6c, #e3a29f);
+}
+
+.capa-azul {
+    background: linear-gradient( 135deg, #74658d, #b9a6ce);
+}
+
+.capa-roxa {
+    background: linear-gradient( 135deg, #82658d, #d0a5c4);
+}
+
+.capa-verde {
+    background: linear-gradient( 135deg, #84735f, #d1b18e);
+}
+
+.capa-pink {
+    background: linear-gradient( 135deg, #a45d79, #de9caf);
+}
+
+.musica-numero {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: rgba(255, 255, 255, .72);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 14px;
+}
+
+.musica-simbolo {
+    position: relative;
+    z-index: 2;
+    width: 47px;
+    height: 47px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .64);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .20);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 10px 25px rgba(60, 37, 49, .14);
+}
+
+.capa-brilho {
+    position: absolute;
+    z-index: 3;
+    width: 90px;
+    height: 180px;
+    background: linear-gradient( 105deg, transparent, rgba(255, 255, 255, .15), transparent);
+    transform: rotate(30deg) translateX(-130px);
+    animation: brilhoCapa 4s ease-in-out infinite;
+}
+
+@keyframes brilhoCapa {
+    0% {
+        transform: rotate(30deg) translateX(-140px);
+    }
+    50% {
+        transform: rotate(30deg) translateX(120px);
+    }
+    100% {
+        transform: rotate(30deg) translateX(140px);
+    }
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.musica-tag {
+    color: var(--rosa-600);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.musica-info h3 {
+    margin-top: 5px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.musica-info p {
+    margin-top: 4px;
+    color: var(--gray);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MOTIVO
+========================================================= */
+
+.musica-motivo span {
+    color: var(--lilac-600);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.musica-motivo p {
+    max-width: 420px;
+    margin-top: 5px;
+    color: var(--ink-soft);
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.musica-tempo {
+    color: var(--gray-light);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   PLAY
+========================================================= */
+
+.play-button {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    color: white;
+    font-size: 10px;
+    box-shadow: 0 8px 19px rgba(166, 101, 132, .18);
+    transition: .25s var(--ease);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(166, 101, 132, .28);
+}
+
+.play-button.tocando {
+    animation: playPulse .8s ease-in-out infinite alternate;
+}
+
+@keyframes playPulse {
+    to {
+        box-shadow: 0 0 0 8px rgba(209, 110, 146, .10);
+    }
+}
+
+
+/* =========================================================
+   MOMENTO
+========================================================= */
+
+.momento {
+    position: relative;
+    z-index: 1;
+    padding: 95px max(32px, calc((100vw - 1400px)/2));
+    background: linear-gradient( 180deg, rgba(255, 255, 255, .30), rgba(239, 225, 239, .35));
+    border-top: 1px solid rgba(255, 255, 255, .38);
+    border-bottom: 1px solid rgba(255, 255, 255, .38);
+}
+
+.momento-conteudo h2 {
+    margin-top: 8px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(36px, 4vw, 49px);
+    font-weight: 400;
+}
+
+.momento-conteudo p {
+    max-width: 520px;
+    margin-top: 9px;
+    color: var(--gray);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.momentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 33px;
+}
+
+.momento-card {
+    position: relative;
+    min-height: 280px;
+    padding: 28px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 23px;
+    background: rgba(255, 255, 255, .61);
+    transition: .35s var(--ease);
+}
+
+.momento-card::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -85px;
+    bottom: -90px;
+    border: 18px solid rgba(179, 139, 192, .11);
+    border-radius: 50%;
+}
+
+.momento-card:hover,
+.ativo-momento {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, .88);
+    border-color: rgba(156, 111, 168, .23);
+    box-shadow: var(--shadow-md);
+}
+
+.momento-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.momento-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--rosa-100);
+    color: var(--rosa-600);
+    font-size: 20px;
+}
+
+.momento-numero {
+    color: var(--gray-light);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 15px;
+}
+
+.momento-card h3 {
+    margin-top: 67px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.momento-card p {
+    margin-top: 7px;
+    color: var(--ink-soft);
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.momento-musica {
+    display: inline-flex;
+    margin-top: 16px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: var(--lilac-100);
+    color: var(--lilac-600);
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INSIGHT
+========================================================= */
+
+.insight-musical {
+    padding-top: 105px;
+}
+
+.insight-large {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 28px;
+    background: radial-gradient( circle at 90% 20%, rgba(181, 140, 195, .33), transparent 30%), linear-gradient( 135deg, #f4e3ec, #ece1f0);
+    box-shadow: var(--shadow-sm);
+}
+
+.insight-large::after {
+    content: "♪";
+    position: absolute;
+    right: 25px;
+    top: -25px;
+    color: rgba(125, 91, 140, .11);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 170px;
+}
+
+.insight-large-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--lilac-600);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .15em;
+}
+
+.insight-icon-large {
+    position: relative;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .57);
+    color: var(--rosa-600);
+    font-size: 23px;
+    box-shadow: var(--shadow-xs);
+}
+
+.insight-large h2 {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin-top: 19px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.insight-large p {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin-top: 15px;
+    color: var(--ink-soft);
+    font-size: 10px;
+    line-height: 1.75;
+}
+
+.insight-large a {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    margin-top: 22px;
+    color: var(--rosa-600);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-musica {
+    position: relative;
+    width: min(1400px, calc(100% - 64px));
+    min-height: 260px;
+    margin: 100px auto;
+    padding: 48px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    overflow: hidden;
+    border-radius: 29px;
+    background: radial-gradient( circle at 80% 20%, rgba(255, 255, 255, .18), transparent 28%), linear-gradient( 135deg, #cfaed5, #d885a7);
+    color: var(--ink);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-musica::before {
+    content: "";
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    right: -110px;
+    bottom: -190px;
+    border: 30px solid rgba(255, 255, 255, .13);
+    border-radius: 50%;
+}
+
+.cta-musica h2 {
+    max-width: 690px;
+    margin-top: 9px;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(38px, 4vw, 50px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.cta-musica p {
+    margin-top: 12px;
+    color: rgba(64, 54, 60, .69);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ONDA
+========================================================= */
+
+.onda {
+    min-width: 320px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.onda span {
+    width: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .68);
+    animation: ondaAnim 1s ease-in-out infinite alternate;
+}
+
+.onda span:nth-child(1) {
+    height: 25px;
+}
+
+.onda span:nth-child(2) {
+    height: 52px;
+    animation-delay: .1s;
+}
+
+.onda span:nth-child(3) {
+    height: 77px;
+    animation-delay: .2s;
+}
+
+.onda span:nth-child(4) {
+    height: 41px;
+    animation-delay: .3s;
+}
+
+.onda span:nth-child(5) {
+    height: 94px;
+    animation-delay: .4s;
+}
+
+.onda span:nth-child(6) {
+    height: 63px;
+    animation-delay: .5s;
+}
+
+.onda span:nth-child(7) {
+    height: 109px;
+    animation-delay: .6s;
+}
+
+.onda span:nth-child(8) {
+    height: 75px;
+    animation-delay: .7s;
+}
+
+.onda span:nth-child(9) {
+    height: 95px;
+    animation-delay: .8s;
+}
+
+.onda span:nth-child(10) {
+    height: 53px;
+    animation-delay: .9s;
+}
+
+.onda span:nth-child(11) {
+    height: 72px;
+    animation-delay: 1s;
+}
+
+.onda span:nth-child(12) {
+    height: 37px;
+    animation-delay: 1.1s;
+}
+
+@keyframes ondaAnim {
+    to {
+        transform: scaleY(.4);
+    }
+}
+
+
+/* =========================================================
+   EXPERIÊNCIA ATIVA
+========================================================= */
+
+.experiencia-ativa .vinil {
+    animation-duration: 4s;
+}
+
+.experiencia-ativa .visual-glow {
+    transform: scale(1.15);
+    background: radial-gradient( circle, rgba(230, 111, 162, .48), transparent 70%);
+}
+
+.experiencia-ativa .nota {
+    animation-duration: 2s;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    position: relative;
+    z-index: 2;
+    width: min(1400px, calc(100% - 64px));
+    margin: 0 auto 25px;
+    padding: 32px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    border-top: 1px solid rgba(95, 70, 81, .12);
+}
+
+.footer-logo {
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.footer p,
+.footer span {
+    color: var(--gray);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   =========================================================
+   CURSOS
+   =========================================================
+   ========================================================= */
+
+
+/* página */
+
+.pagina-cursos {
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.page-cursos {
+    position: relative;
+    z-index: 1;
+    width: min(1510px, calc(100% - 46px));
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .64);
+    border-radius: 40px;
+    background: rgba(255, 250, 244, .93);
+    box-shadow: var(--shadow-md);
+    animation: pageEnter .75s var(--ease) both;
+}
+
+
+/* =========================================================
+   HEADER CURSOS
+========================================================= */
+
+.header-cursos {
+    min-height: 88px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 26px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, .46);
+}
+
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, var(--rosa-500), var(--lilac-500));
+    color: white;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 23px;
+    box-shadow: var(--shadow-xs);
+}
+
+.brand-copy strong {
+    display: block;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.brand-copy span {
+    display: block;
+    margin-top: 3px;
+    color: var(--gray-light);
+    font-size: 8px;
+}
+
+.header-title-cursos {
+    text-align: center;
+}
+
+.header-title-cursos small {
+    display: block;
+    color: var(--lilac-500);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .19em;
+    text-transform: uppercase;
+}
+
+.header-title-cursos h1 {
+    margin-top: 4px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.header-action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.back {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 15px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .86);
+    color: var(--ink-soft);
+    font-size: 9px;
+    font-weight: 800;
+    transition: .25s var(--ease);
+}
+
+.back:hover {
+    transform: translateX(-3px);
+    background: white;
+    box-shadow: var(--shadow-xs);
+}
+
+
+/* =========================================================
+   HERO CURSOS
+========================================================= */
+
+.hero-cursos-page {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(330px, .9fr);
+    min-height: 500px;
+    margin: 22px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: var(--creme);
+}
+
+.hero-cursos-text {
+    position: relative;
+    overflow: hidden;
+    padding: 66px 56px;
+    background: linear-gradient( 145deg, #fffaf4, #fff3ea);
+}
+
+.hero-cursos-text::before {
+    content: "APRENDA";
+    position: absolute;
+    right: -45px;
+    bottom: -60px;
+    color: rgba(205, 112, 151, .055);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 145px;
+    line-height: .8;
+}
+
+.eyebrow-cursos {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--lilac-600);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+
+.eyebrow-cursos::before {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background: currentColor;
+}
+
+.hero-cursos-text h2 {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin-top: 15px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 400;
+    line-height: .92;
+    letter-spacing: -.035em;
+}
+
+.hero-cursos-text h2 em {
+    color: var(--rosa-500);
+    font-style: normal;
+}
+
+.hero-cursos-text>p {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-top: 21px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.hero-actions {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 27px;
+}
+
+.primary-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 17px;
+    border-radius: 13px;
+    background: linear-gradient( 135deg, var(--lilac-400), var(--rosa-500));
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    box-shadow: 0 9px 23px rgba(179, 139, 192, .22);
+    transition: .25s var(--ease);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 29px rgba(179, 139, 192, .28);
+}
+
+.secondary-btn {
+    min-height: 44px;
+    padding: 0 17px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .85);
+    color: var(--ink-soft);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    transition: .25s var(--ease);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    box-shadow: var(--shadow-xs);
+}
+
+
+/* =========================================================
+   STATS CURSOS
+========================================================= */
+
+.hero-stats {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.stat {
+    padding-left: 13px;
+    border-left: 1px solid var(--line-strong);
+}
+
+.stat strong {
+    display: block;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.stat span {
+    display: block;
+    margin-top: 2px;
+    color: var(--gray);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   VISUAL CURSOS
+========================================================= */
+
+.hero-cursos-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    padding: 30px;
+    background: linear-gradient( 145deg, #e9dcef, #efc4ce 48%, #f4d4bd);
+}
+
+.hero-cursos-visual::before {
+    content: "";
+    position: absolute;
+    width: 410px;
+    height: 410px;
+    right: -180px;
+    top: -180px;
+    border: 40px solid rgba(255, 255, 255, .17);
+    border-radius: 50%;
+}
+
+.hero-cursos-visual::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: -130px;
+    bottom: -135px;
+    border: 29px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+}
+
+.visual-heading-cursos {
+    position: relative;
+    z-index: 3;
+    color: rgba(65, 54, 60, .62);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PAINEL DE CURSOS
+========================================================= */
+
+.cursos-painel {
+    position: absolute;
+    z-index: 4;
+    width: min(390px, 82%);
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+    padding: 23px;
+    border: 1px solid rgba(255, 255, 255, .67);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .39);
+    backdrop-filter: blur(13px);
+    box-shadow: 0 28px 65px rgba(89, 53, 69, .16);
+}
+
+.cursos-painel-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cursos-painel-top span {
+    color: rgba(63, 53, 59, .56);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .10em;
+}
+
+.cursos-painel-top strong {
+    color: var(--rosa-600);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.progresso {
+    height: 6px;
+    margin: 14px 0 21px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(89, 65, 77, .10);
+}
+
+.progresso span {
+    display: block;
+    width: 72%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient( 90deg, var(--rosa-500), var(--lilac-400));
+}
+
+.curso-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px;
+    margin-bottom: 9px;
+    border: 1px solid rgba(255, 255, 255, .44);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .40);
+}
+
+.curso-mini-icon {
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: white;
+    background: var(--rosa-500);
+    font-size: 16px;
+}
+
+.curso-mini-icon.lilac {
+    background: var(--lilac-500);
+}
+
+.curso-mini-info {
+    flex: 1;
+}
+
+.curso-mini-info strong {
+    display: block;
+    color: rgba(63, 53, 59, .78);
+    font-size: 10px;
+}
+
+.curso-mini-info small {
+    display: block;
+    margin-top: 3px;
+    color: rgba(63, 53, 59, .48);
+    font-size: 8px;
+}
+
+.check {
+    color: #679878;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CURSOS - CATÁLOGO
+========================================================= */
+
+.cursos-area {
+    padding: 17px 43px 55px;
+    background: linear-gradient( 180deg, rgba(250, 225, 184, .43), rgba(250, 225, 184, .17));
+}
+
+.cursos-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 22px;
+}
+
+.cursos-heading h2 {
+    margin-top: 5px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.cursos-heading p {
+    max-width: 450px;
+    text-align: right;
+    color: var(--gray);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 21px;
+}
+
+.filter {
+    min-height: 30px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .56);
+    color: var(--ink-soft);
+    font-size: 8px;
+    font-weight: 800;
+    transition: .22s var(--ease);
+}
+
+.filter:hover {
+    transform: translateY(-2px);
+    background: white;
+}
+
+.filter.active {
+    background: var(--rosa-500);
+    color: white;
+    border-color: var(--rosa-500);
+    box-shadow: 0 7px 17px rgba(209, 110, 146, .18);
+}
+
+
+/* =========================================================
+   GRID CURSOS
+========================================================= */
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+
+/* =========================================================
+   CARD CURSO
+========================================================= */
+
+.card-curso {
+    position: relative;
+    overflow: hidden;
+    min-height: 390px;
+    padding: 13px;
+    border: 1px solid rgba(96, 72, 82, .11);
+    border-radius: 23px;
+    background: rgba(255, 255, 255, .78);
+    cursor: pointer;
+    transition: .35s var(--ease);
+}
+
+.card-curso:hover {
+    transform: translateY(-8px);
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.card-capa-curso {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    color: white;
+}
+
+.card-capa-curso::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -110px;
+    top: -120px;
+    border: 28px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+}
+
+.card-capa-curso::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -58px;
+    bottom: -65px;
+    border: 17px solid rgba(255, 255, 255, .10);
+    border-radius: 50%;
+}
+
+.curso-rosa {
+    background: linear-gradient( 135deg, #a95f7e, #e2a2b8);
+}
+
+.curso-lilac {
+    background: linear-gradient( 135deg, #7f6390, #c7a6d0);
+}
+
+.curso-peach {
+    background: linear-gradient( 135deg, #ba7374, #eab6aa);
+}
+
+.curso-dourado {
+    background: linear-gradient( 135deg, #92765f, #dbba8f);
+}
+
+.curso-pink {
+    background: linear-gradient( 135deg, #9d5875, #dda0b5);
+}
+
+.curso-roxo {
+    background: linear-gradient( 135deg, #766083, #bda1ca);
+}
+
+.curso-icon-visual {
+    position: relative;
+    z-index: 3;
+    width: 84px;
+    height: 84px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .68);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .19);
+    backdrop-filter: blur(5px);
+    font-size: 37px;
+    box-shadow: 0 15px 30px rgba(60, 39, 48, .12);
+    transition: .4s var(--ease);
+}
+
+.card-curso:hover .curso-icon-visual {
+    transform: scale(1.08) rotate(-4deg);
+    background: rgba(255, 255, 255, .28);
+}
+
+.curso-label {
+    position: absolute;
+    z-index: 5;
+    left: 13px;
+    top: 13px;
+    padding: 6px 9px;
+    border: 1px solid rgba(255, 255, 255, .43);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .21);
+    backdrop-filter: blur(5px);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.curso-numero {
+    position: absolute;
+    z-index: 5;
+    right: 13px;
+    top: 13px;
+    color: rgba(255, 255, 255, .63);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES CARD
+========================================================= */
+
+.curso-info {
+    padding: 16px 6px 7px;
+}
+
+.curso-info h3 {
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.curso-info p {
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.curso-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.meta {
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--creme);
+    color: var(--ink-soft);
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.curso-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 13px;
+    border-top: 1px solid var(--line);
+}
+
+.curso-nivel {
+    color: var(--lilac-600);
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.open-course {
+    width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .85);
+    color: var(--ink-soft);
+    transition: .25s var(--ease);
+}
+
+.card-curso:hover .open-course {
+    transform: translate(2px, -2px);
+    background: var(--rosa-100);
+    color: var(--rosa-600);
+}
+
+
+/* =========================================================
+   FRASE FINAL CURSOS
+========================================================= */
+
+.final-cursos {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 43px 43px;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(101, 76, 87, .09);
+    border-radius: 22px;
+    background: linear-gradient( 135deg, #ece0f0, #f4dde3);
+}
+
+.final-cursos::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -120px;
+    bottom: -130px;
+    border: 22px solid rgba(255, 255, 255, .19);
+    border-radius: 50%;
+}
+
+.final-cursos small {
+    color: var(--lilac-600);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+
+.final-cursos h4 {
+    margin-top: 5px;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.final-cursos p {
+    max-width: 420px;
+    color: var(--ink-soft);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(54, 39, 47, .42);
+    backdrop-filter: blur(11px);
+}
+
+.overlay.show {
+    display: flex;
+    animation: overlayIn .22s ease both;
+}
+
+.modal {
+    position: relative;
+    width: min(650px, 100%);
+    overflow: hidden;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 29px;
+    background: linear-gradient( 145deg, #fffaf5, #fff0e4);
+    box-shadow: 0 35px 105px rgba(38, 25, 31, .30);
+    animation: modalIn .38s var(--ease) both;
+}
+
+.modal::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -150px;
+    top: -155px;
+    border: 23px solid rgba(201, 160, 207, .12);
+    border-radius: 50%;
+}
+
+.modal-line {
+    width: 55px;
+    height: 4px;
+    margin-bottom: 23px;
+    border-radius: 999px;
+    background: linear-gradient( 90deg, var(--rosa-400), var(--lilac-400));
+}
+
+.modal h2 {
+    position: relative;
+    z-index: 2;
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.modal-subtitle {
+    display: inline-flex;
+    margin-top: 9px;
+    color: var(--lilac-600);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.modal p {
+    margin-top: 21px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.modal-tip {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--gray-light);
+    font-size: 9px;
+}
+
+.close {
+    position: absolute;
+    z-index: 4;
+    top: 16px;
+    right: 16px;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .90);
+    color: var(--ink-soft);
+    font-size: 20px;
+    transition: .25s var(--ease);
+}
+
+.close:hover {
+    transform: rotate(90deg);
+    background: var(--rosa-100);
+}
+
+@keyframes overlayIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .menu {
+        gap: 17px;
+    }
+    .hero-musicas,
+    .hero-cursos-page {
+        grid-template-columns: 1fr;
+    }
+    .vinil-area,
+    .hero-cursos-visual {
+        min-height: 430px;
+    }
+    .grid-cursos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .musica-card {
+        grid-template-columns: 90px 1fr 45px;
+    }
+    .musica-motivo,
+    .musica-tempo {
+        display: none;
+    }
+    .momentos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 780px) {
+    .topo {
+        width: calc(100% - 24px);
+        grid-template-columns: auto 1fr auto;
+        padding: 12px 15px;
+    }
+    .menu {
+        display: none;
+    }
+    .texto-pesquisa {
+        display: none;
+    }
+    .logo {
+        font-size: 13px;
+    }
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .hero-musicas,
+    .cta-musica {
+        width: calc(100% - 24px);
+        padding: 35px 25px;
+        border-radius: 27px;
+    }
+    .hero-musica-texto {
+        padding: 42px 0;
+    }
+    .hero-musica-texto h1 {
+        font-size: 48px;
+    }
+    .vinil-area {
+        min-height: 370px;
+        margin: 0 -25px -35px;
+    }
+    .vinil {
+        width: 280px;
+        height: 280px;
+    }
+    .floating-label {
+        display: none;
+    }
+    .frase-musical {
+        width: calc(100% - 30px);
+        margin-bottom: 70px;
+    }
+    .frase-musical blockquote {
+        font-size: 28px;
+    }
+    .secao {
+        width: calc(100% - 30px);
+    }
+    .cabecalho-playlist,
+    .cursos-heading {
+        display: block;
+    }
+    .contador-playlist {
+        margin-top: 13px;
+    }
+    .musica-card {
+        grid-template-columns: 70px 1fr 40px;
+        gap: 12px;
+        padding: 10px;
+    }
+    .musica-capa {
+        width: 70px;
+        height: 70px;
+    }
+    .musica-info h3 {
+        font-size: 20px;
+    }
+    .cta-musica {
+        display: block;
+        padding: 32px 25px;
+        margin: 70px 12px;
+    }
+    .cta-musica h2 {
+        font-size: 35px;
+    }
+    .onda {
+        min-width: 100%;
+        margin-top: 25px;
+    }
+    .page-cursos {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    .header-cursos {
+        grid-template-columns: auto 1fr auto;
+        padding: 13px 15px;
+    }
+    .brand-copy,
+    .header-title-cursos small {
+        display: none;
+    }
+    .header-title-cursos {
+        text-align: left;
+        margin-left: 6px;
+    }
+    .header-title-cursos h1 {
+        font-size: 20px;
+    }
+    .hero-cursos-page {
+        margin: 12px;
+        border-radius: 23px;
+    }
+    .hero-cursos-text {
+        padding: 43px 25px;
+    }
+    .hero-cursos-text h2 {
+        font-size: 46px;
+    }
+    .hero-cursos-visual {
+        min-height: 360px;
+    }
+    .cursos-area {
+        padding: 25px 18px 35px;
+    }
+    .grid-cursos {
+        grid-template-columns: 1fr;
+    }
+    .cursos-heading p {
+        margin-top: 9px;
+        text-align: left;
+    }
+    .final-cursos {
+        margin: 0 18px 25px;
+        display: block;
+        padding: 25px;
+    }
+    .final-cursos p {
+        margin-top: 10px;
+    }
+    .modal {
+        padding: 34px 24px;
+    }
+    .modal h2 {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 430px) {
+    .hero-musica-texto h1,
+    .hero-cursos-text h2 {
+        font-size: 41px;
+    }
+    .vinil {
+        width: 225px;
+        height: 225px;
+    }
+    .vinil-centro {
+        width: 72px;
+        height: 72px;
+    }
+    .frase-musical blockquote {
+        font-size: 24px;
+    }
+    .onda span {
+        width: 5px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+.card-curso:focus-visible {
+    outline: 3px solid rgba(150, 112, 164, .35);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

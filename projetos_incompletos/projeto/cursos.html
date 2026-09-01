@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cursos | Elas Empreendedoras
+    </title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="estilo_empreendedorismo.css">
+
+</head>
+
+
+<body class="pagina-cursos">
+
+
+    <main class="page-cursos">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="header-cursos">
+
+
+            <div class="brand-area">
+
+                <div class="brand-mark">
+                    E
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Conhecimento que transforma
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-title-cursos">
+
+                <small>
+                    Sua próxima conquista começa aqui
+                </small>
+
+                <h1>
+                    Cursos
+                </h1>
+
+            </div>
+
+
+            <div class="header-action">
+
+                <button class="back" onclick="window.location.href='Home.html'">
+
+                    ←
+                    Voltar
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero-cursos-page">
+
+
+            <div class="hero-cursos-text">
+
+
+                <div class="eyebrow-cursos">
+
+                    APRENDER • CRIAR • CRESCER
+
+                </div>
+
+
+                <h2>
+
+                    Conhecimento para
+                    <em>transformar ideias</em> em possibilidades.
+
+                </h2>
+
+
+                <p>
+
+                    Aprenda sobre empreendedorismo, liderança, marketing, finanças e inovação através de cursos pensados para desenvolver habilidades que podem acompanhar você em cada etapa.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <button class="primary-btn" onclick="
+                        document
+                        .getElementById('catalogo')
+                        .scrollIntoView({
+                            behavior:'smooth'
+                        })">
+
+                        Explorar cursos
+
+                        →
+
+                    </button>
+
+
+                    <button class="secondary-btn" onclick="filtrarCursos('Todos')">
+
+                        Ver todos
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="hero-stats">
+
+
+                    <div class="stat">
+
+                        <strong>
+                            06
+                        </strong>
+
+                        <span>
+                            cursos
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            áreas
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <strong>
+                            ∞
+                        </strong>
+
+                        <span>
+                            possibilidades
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <aside class="hero-cursos-visual">
+
+
+                <div class="visual-heading-cursos">
+
+                    SUA JORNADA DE APRENDIZADO
+
+                </div>
+
+
+                <div class="cursos-painel">
+
+
+                    <div class="cursos-painel-top">
+
+                        <span>
+                            PROGRESSO DA JORNADA
+                        </span>
+
+                        <strong>
+                            72%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progresso">
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <div class="curso-mini">
+
+
+                        <div class="curso-mini-icon">
+
+                            ✦
+
+                        </div>
+
+
+                        <div class="curso-mini-info">
+
+                            <strong>
+                                Liderança feminina
+                            </strong>
+
+                            <small>
+                                06 aulas • Concluído
+                            </small>
+
+                        </div>
+
+
+                        <span class="check">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="curso-mini">
+
+
+                        <div class="curso-mini-icon lilac">
+
+                            ◈
+
+                        </div>
+
+
+                        <div class="curso-mini-info">
+
+                            <strong>
+                                Marketing digital
+                            </strong>
+
+                            <small>
+                                08 aulas • Em andamento
+                            </small>
+
+                        </div>
+
+
+                        <span>
+                            72%
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="curso-mini">
+
+
+                        <div class="curso-mini-icon">
+
+                            ◆
+
+                        </div>
+
+
+                        <div class="curso-mini-info">
+
+                            <strong>
+                                Finanças para negócios
+                            </strong>
+
+                            <small>
+                                05 aulas • Próximo
+                            </small>
+
+                        </div>
+
+
+                        <span>
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CATÁLOGO
+        ====================================================== -->
+
+        <section class="cursos-area" id="catalogo">
+
+
+            <div class="cursos-heading">
+
+
+                <div>
+
+                    <div class="section-kicker">
+                        Aprenda no seu ritmo
+                    </div>
+
+
+                    <h2>
+                        Encontre o curso certo para você.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Conteúdos organizados para ajudar você a desenvolver novas habilidades, testar ideias e construir projetos.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filters">
+
+
+                <button class="filter active" onclick="filtrarCursos('Todos', this)">
+
+                    Todos
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Negócios', this)">
+
+                    Negócios
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Marketing', this)">
+
+                    Marketing
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Liderança', this)">
+
+                    Liderança
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Finanças', this)">
+
+                    Finanças
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Inovação', this)">
+
+                    Inovação
+
+                </button>
+
+
+                <button class="filter" onclick="filtrarCursos('Carreira', this)">
+
+                    Carreira
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GRID
+            ================================================== -->
+
+            <div class="grid-cursos">
+
+
+
+                <!-- CURSO 01 -->
+
+                <article class="card-curso" data-category="Negócios" data-title="Começando seu negócio" data-subtitle="Negócios • Iniciante" data-description="
+                    Aprenda a transformar uma ideia inicial
+                    em uma oportunidade de negócio. O curso
+                    aborda identificação de problemas,
+                    público-alvo, proposta de valor e primeiros
+                    passos para estruturar um projeto.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-rosa">
+
+
+                        <span class="curso-label">
+                            Mais procurado
+                        </span>
+
+
+                        <span class="curso-numero">
+                            01
+                        </span>
+
+
+                        <div class="curso-icon-visual">
+                            ✦
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+
+                        <h3>
+                            Começando seu negócio
+                        </h3>
+
+
+                        <p>
+                            Da ideia inicial aos primeiros passos para construir seu projeto.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                06 aulas
+                            </span>
+
+                            <span class="meta">
+                                2h 30min
+                            </span>
+
+                            <span class="meta">
+                                Iniciante
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                NEGÓCIOS
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CURSO 02 -->
+
+                <article class="card-curso" data-category="Marketing" data-title="Marketing para pequenos negócios" data-subtitle="Marketing • Intermediário" data-description="
+                    Descubra como posicionar uma marca,
+                    entender seu público e utilizar estratégias
+                    digitais para aumentar alcance, relacionamento
+                    e oportunidades de venda.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-lilac">
+
+                        <span class="curso-label">
+                            Digital
+                        </span>
+
+                        <span class="curso-numero">
+                            02
+                        </span>
+
+                        <div class="curso-icon-visual">
+                            ◎
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+                        <h3>
+                            Marketing para pequenos negócios
+                        </h3>
+
+                        <p>
+                            Aprenda a posicionar sua marca e construir presença digital.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                08 aulas
+                            </span>
+
+                            <span class="meta">
+                                3h 20min
+                            </span>
+
+                            <span class="meta">
+                                Intermediário
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                MARKETING
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CURSO 03 -->
+
+                <article class="card-curso" data-category="Liderança" data-title="Liderança feminina" data-subtitle="Liderança • Intermediário" data-description="
+                    Desenvolva habilidades de liderança,
+                    comunicação, tomada de decisão,
+                    inteligência emocional e gestão de equipes.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-peach">
+
+                        <span class="curso-label">
+                            Desenvolvimento
+                        </span>
+
+                        <span class="curso-numero">
+                            03
+                        </span>
+
+                        <div class="curso-icon-visual">
+                            ♢
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+                        <h3>
+                            Liderança feminina
+                        </h3>
+
+                        <p>
+                            Desenvolva confiança, comunicação e capacidade de liderança.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                07 aulas
+                            </span>
+
+                            <span class="meta">
+                                2h 50min
+                            </span>
+
+                            <span class="meta">
+                                Intermediário
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                LIDERANÇA
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CURSO 04 -->
+
+                <article class="card-curso" data-category="Finanças" data-title="Finanças para empreendedoras" data-subtitle="Finanças • Iniciante" data-description="
+                    Aprenda a organizar receitas, despesas,
+                    fluxo de caixa, precificação e decisões
+                    financeiras para manter o negócio saudável.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-dourado">
+
+                        <span class="curso-label">
+                            Essencial
+                        </span>
+
+                        <span class="curso-numero">
+                            04
+                        </span>
+
+                        <div class="curso-icon-visual">
+                            ◇
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+                        <h3>
+                            Finanças para empreendedoras
+                        </h3>
+
+                        <p>
+                            Organize o dinheiro do seu negócio e tome decisões melhores.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                05 aulas
+                            </span>
+
+                            <span class="meta">
+                                2h 10min
+                            </span>
+
+                            <span class="meta">
+                                Iniciante
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                FINANÇAS
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CURSO 05 -->
+
+                <article class="card-curso" data-category="Inovação" data-title="Criatividade e inovação" data-subtitle="Inovação • Todos os níveis" data-description="
+                    Explore técnicas de criatividade,
+                    geração de ideias, resolução de problemas
+                    e construção de soluções diferentes.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-pink">
+
+                        <span class="curso-label">
+                            Criatividade
+                        </span>
+
+                        <span class="curso-numero">
+                            05
+                        </span>
+
+                        <div class="curso-icon-visual">
+                            ✧
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+                        <h3>
+                            Criatividade e inovação
+                        </h3>
+
+                        <p>
+                            Transforme problemas em ideias e ideias em possibilidades.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                06 aulas
+                            </span>
+
+                            <span class="meta">
+                                2h 40min
+                            </span>
+
+                            <span class="meta">
+                                Todos
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                INOVAÇÃO
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CURSO 06 -->
+
+                <article class="card-curso" data-category="Carreira" data-title="Marca pessoal e carreira" data-subtitle="Carreira • Intermediário" data-description="
+                    Aprenda a comunicar seus diferenciais,
+                    construir uma marca pessoal consistente
+                    e apresentar melhor suas habilidades.
+                    " onclick="abrirCurso(this)" tabindex="0" role="button">
+
+
+                    <div class="card-capa-curso curso-roxo">
+
+                        <span class="curso-label">
+                            Carreira
+                        </span>
+
+                        <span class="curso-numero">
+                            06
+                        </span>
+
+                        <div class="curso-icon-visual">
+                            ☆
+                        </div>
+
+                    </div>
+
+
+                    <div class="curso-info">
+
+                        <h3>
+                            Marca pessoal e carreira
+                        </h3>
+
+                        <p>
+                            Construa uma presença profissional que mostre quem você é.
+                        </p>
+
+
+                        <div class="curso-meta">
+
+                            <span class="meta">
+                                07 aulas
+                            </span>
+
+                            <span class="meta">
+                                2h 55min
+                            </span>
+
+                            <span class="meta">
+                                Intermediário
+                            </span>
+
+                        </div>
+
+
+                        <div class="curso-bottom">
+
+                            <span class="curso-nivel">
+                                CARREIRA
+                            </span>
+
+                            <span class="open-course">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL
+        ====================================================== -->
+
+        <section class="final-cursos">
+
+
+            <div>
+
+                <small>
+                    O conhecimento é só o começo
+                </small>
+
+
+                <h4>
+                    Aprender muda a forma como você enxerga possibilidades.
+                </h4>
+
+            </div>
+
+
+            <p>
+
+                Cada habilidade adquirida pode se transformar em uma nova ideia, uma oportunidade ou até no início de um projeto.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL
+    ====================================================== -->
+
+    <div class="overlay" id="overlay">
+
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fecharCurso()" aria-label="Fechar">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle">
+            </h2>
+
+
+            <div class="modal-subtitle" id="modalSubtitle">
+            </div>
+
+
+            <p id="modalDescription">
+            </p>
+
+
+            <div class="modal-tip">
+
+                Clique fora da janela ou pressione ESC para fechar.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+        function abrirCurso(card) {
+
+            document
+                .getElementById("modalTitle")
+                .textContent =
+                card.dataset.title;
+
+
+            document
+                .getElementById("modalSubtitle")
+                .textContent =
+                card.dataset.subtitle;
+
+
+            document
+                .getElementById("modalDescription")
+                .textContent =
+                card.dataset.description;
+
+
+            document
+                .getElementById("overlay")
+                .classList.add("show");
+
+        }
+
+
+
+        function fecharCurso() {
+
+            document
+                .getElementById("overlay")
+                .classList.remove("show");
+
+        }
+
+
+
+        function filtrarCursos(
+            categoria,
+            botao
+        ) {
+
+
+            if (botao) {
+
+                document
+                    .querySelectorAll(".filter")
+                    .forEach(item => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                botao.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            document
+                .querySelectorAll(".card-curso")
+                .forEach(card => {
+
+
+                    const mostrar =
+                        categoria === "Todos" ||
+                        card.dataset.category === categoria;
+
+
+                    if (mostrar) {
+
+                        card.style.display = "";
+
+                        setTimeout(() => {
+
+                            card.style.opacity = "1";
+                            card.style.transform =
+                                "translateY(0)";
+
+                        }, 10);
+
+                    } else {
+
+                        card.style.opacity = "0";
+
+                        card.style.transform =
+                            "translateY(10px)";
+
+                        setTimeout(() => {
+
+                            card.style.display = "none";
+
+                        }, 200);
+
+                    }
+
+                });
+
+        }
+
+
+
+        document
+            .getElementById("overlay")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        fecharCurso();
+
+                    }
+
+                }
+            );
+
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    fecharCurso();
+
+                }
+
+            }
+        );
+
+
+
+        document
+            .querySelectorAll(".card-curso")
+            .forEach(card => {
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            abrirCurso(card);
+
+                        }
+
+                    }
+                );
+
+            });
+    </script>
+
+
+</body>
+
+</html>
