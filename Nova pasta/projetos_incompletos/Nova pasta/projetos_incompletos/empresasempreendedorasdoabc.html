@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empresas do ABC | Elas Empreendedoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           PALETA
+        ========================================================== */
+        
+         :root {
+            --pink: #d87598;
+            --pink-light: #f2b8c6;
+            --pink-soft: #fcecef;
+            --lilac: #b48ec1;
+            --lilac-light: #e8dcec;
+            --cream: #fff8ef;
+            --cream-dark: #f6dfc0;
+            --brown: #40373c;
+            --brown-soft: #71646a;
+            --brown-light: #988b90;
+            --white: #ffffff;
+            --border: rgba(75, 53, 64, .12);
+            --shadow: 0 18px 45px rgba(75, 49, 61, .10);
+            --shadow-hover: 0 26px 65px rgba(75, 49, 61, .16);
+            --ease: cubic-bezier(.22, 1, .36, 1);
+        }
+        /* =========================================================
+           RESET
+        ========================================================== */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            min-height: 100vh;
+            font-family: "Inter", Arial, sans-serif;
+            color: var(--brown);
+            overflow-x: hidden;
+            background: radial-gradient( circle at 12% 12%, rgba(255, 255, 255, .55), transparent 22%), linear-gradient( 135deg, #efa4c3, #f3b5cb 35%, #f5c7ca 65%, #f6dbca);
+        }
+        
+        button {
+            font: inherit;
+            border: 0;
+        }
+        /* =========================================================
+           ELEMENTOS DECORATIVOS DO FUNDO
+        ========================================================== */
+        
+        body::before {
+            content: "";
+            position: fixed;
+            width: 560px;
+            height: 560px;
+            right: -300px;
+            top: 70px;
+            border: 45px solid rgba(255, 255, 255, .17);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            left: -250px;
+            bottom: -250px;
+            border: 38px solid rgba(255, 246, 198, .35);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        /* =========================================================
+           CONTAINER
+        ========================================================== */
+        
+        .page {
+            position: relative;
+            width: min(1460px, calc(100% - 50px));
+            min-height: calc(100vh - 40px);
+            margin: 20px auto;
+            background: rgba(255, 250, 244, .93);
+            border: 1px solid rgba(255, 255, 255, .60);
+            border-radius: 38px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            animation: pageIn .7s var(--ease);
+        }
+        
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* =========================================================
+           TOPO
+        ========================================================== */
+        
+        .top {
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, .42);
+        }
+        
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        
+        .brand-circle {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient( 135deg, var(--pink), var(--lilac));
+            color: white;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 22px;
+            box-shadow: 0 6px 16px rgba(150, 90, 125, .18);
+        }
+        
+        .brand-mini-text strong {
+            display: block;
+            font-size: 11px;
+            letter-spacing: .02em;
+        }
+        
+        .brand-mini-text span {
+            display: block;
+            margin-top: 2px;
+            color: var(--brown-light);
+            font-size: 9px;
+        }
+        
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .85);
+            color: var(--brown-soft);
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .back:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 7px 18px rgba(75, 49, 61, .08);
+        }
+        /* =========================================================
+           HERO DIFERENTE
+        ========================================================== */
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            min-height: 430px;
+            margin: 24px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: var(--cream);
+            border: 1px solid var(--border);
+        }
+        
+        .hero-main {
+            position: relative;
+            padding: 55px;
+            background: linear-gradient( 140deg, #fffaf3, #fcefe5);
+        }
+        
+        .hero-main::before {
+            content: "ABC";
+            position: absolute;
+            right: -15px;
+            top: -30px;
+            color: rgba(201, 160, 207, .11);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 180px;
+            line-height: 1;
+            pointer-events: none;
+        }
+        
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--lilac);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .eyebrow::before {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: currentColor;
+        }
+        
+        .hero h1 {
+            position: relative;
+            max-width: 620px;
+            margin-top: 15px;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: clamp(48px, 6vw, 76px);
+            line-height: .95;
+            font-weight: 400;
+            letter-spacing: -.035em;
+            color: var(--brown);
+        }
+        
+        .hero h1 em {
+            color: var(--pink);
+            font-style: normal;
+        }
+        
+        .hero-text {
+            max-width: 580px;
+            margin-top: 21px;
+            color: var(--brown-soft);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 27px;
+        }
+        
+        .button-main {
+            padding: 13px 19px;
+            border-radius: 13px;
+            background: var(--lilac);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            cursor: pointer;
+            box-shadow: 0 9px 22px rgba(180, 142, 193, .22);
+            transition: .25s var(--ease);
+        }
+        
+        .button-main:hover {
+            transform: translateY(-3px);
+            background: #9870a6;
+            box-shadow: 0 14px 28px rgba(180, 142, 193, .28);
+        }
+        
+        .button-light {
+            padding: 13px 19px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: white;
+            color: var(--brown-soft);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .button-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(75, 49, 61, .08);
+        }
+        /* =========================================================
+           BLOCO VISUAL DIREITO
+        ========================================================== */
+        
+        .hero-map {
+            position: relative;
+            overflow: hidden;
+            min-height: 430px;
+            padding: 32px;
+            background: linear-gradient( 145deg, #dfc6e3, #efc0c9 45%, #f5d5bd);
+        }
+        
+        .map-title {
+            position: relative;
+            z-index: 2;
+            color: rgba(64, 55, 60, .70);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        
+        .map-shape {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px dashed rgba(255, 255, 255, .58);
+            border-radius: 44% 56% 52% 48% / 42% 45% 55% 58%;
+            box-shadow: 0 0 0 22px rgba(255, 255, 255, .08);
+        }
+        
+        .map-shape::before {
+            content: "";
+            position: absolute;
+            inset: 30px;
+            border: 1px solid rgba(255, 255, 255, .43);
+            border-radius: 50%;
+        }
+        
+        .map-shape::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 1px;
+            left: 90px;
+            top: 155px;
+            background: rgba(255, 255, 255, .55);
+            transform: rotate(42deg);
+        }
+        /* =========================================================
+           PONTOS DO ABC
+        ========================================================== */
+        
+        .city {
+            position: absolute;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #5a4d53;
+            font-size: 9px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        
+        .city::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            border: 3px solid rgba(255, 255, 255, .88);
+            border-radius: 50%;
+            background: var(--pink);
+            box-shadow: 0 0 0 5px rgba(216, 117, 152, .14);
+        }
+        
+        .santo-andre {
+            left: 21%;
+            top: 31%;
+        }
+        
+        .sao-bernardo {
+            right: 15%;
+            top: 45%;
+        }
+        
+        .sao-caetano {
+            left: 27%;
+            bottom: 27%;
+        }
+        
+        .diadema {
+            right: 24%;
+            bottom: 20%;
+        }
+        
+        .maua {
+            left: 42%;
+            bottom: 8%;
+        }
+        
+        .ribeirao {
+            right: 5%;
+            top: 22%;
+        }
+        
+        .map-label {
+            position: absolute;
+            left: 50%;
+            top: 52%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgba(64, 55, 60, .54);
+        }
+        
+        .map-label strong {
+            display: block;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 44px;
+            font-weight: 400;
+        }
+        
+        .map-label span {
+            display: block;
+            margin-top: 2px;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+        /* =========================================================
+           INTRO CURTA
+        ========================================================== */
+        
+        .intro-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin: 43px 42px 22px;
+        }
+        
+        .intro-label {
+            color: var(--lilac);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+        
+        .intro-row h2 {
+            margin-top: 6px;
+            font-family: "DM Serif Display", Georgia, serif;
+            color: var(--brown);
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .intro-copy {
+            max-width: 430px;
+            color: var(--brown-light);
+            font-size: 11px;
+            line-height: 1.7;
+            text-align: right;
+        }
+        /* =========================================================
+           FILTROS
+        ========================================================== */
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 42px 23px;
+        }
+        
+        .filter {
+            padding: 9px 13px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .65);
+            color: var(--brown-soft);
+            font-size: 9px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s var(--ease);
+        }
+        
+        .filter:hover {
+            transform: translateY(-2px);
+            background: white;
+        }
+        
+        .filter.active {
+            color: white;
+            background: var(--pink);
+            border-color: var(--pink);
+        }
+        /* =========================================================
+           GRID DIFERENTE
+        ========================================================== */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+            padding: 0 42px 42px;
+        }
+        /* =========================================================
+           CARD
+        ========================================================== */
+        
+        .card {
+            position: relative;
+            min-height: 300px;
+            padding: 22px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 23px;
+            background: white;
+            cursor: pointer;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(112, 87, 98, .20);
+        }
+        
+        .card:nth-child(1) {
+            background: linear-gradient( 145deg, #fffaf5, #f9edf0);
+        }
+        
+        .card:nth-child(2) {
+            background: linear-gradient( 145deg, #fbf8fc, #efe4f2);
+        }
+        
+        .card:nth-child(3) {
+            background: linear-gradient( 145deg, #fff9f6, #f5e4de);
+        }
+        
+        .card:nth-child(4) {
+            background: linear-gradient( 145deg, #fff8ef, #f4e4cb);
+        }
+        
+        .card:nth-child(5) {
+            background: linear-gradient( 145deg, #fff8fa, #f7e2e8);
+        }
+        
+        .card:nth-child(6) {
+            background: linear-gradient( 145deg, #fbf8fc, #eadfed);
+        }
+        /* =========================================================
+           NÚMERO
+        ========================================================== */
+        
+        .card-number {
+            position: absolute;
+            right: 21px;
+            top: 20px;
+            color: rgba(98, 85, 91, .24);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 24px;
+        }
+        /* =========================================================
+           ÍCONE
+        ========================================================== */
+        
+        .card-icon {
+            width: 57px;
+            height: 57px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .72);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .72);
+            color: var(--pink);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 27px;
+            box-shadow: 0 7px 18px rgba(75, 49, 61, .05);
+        }
+        
+        .card:nth-child(even) .card-icon {
+            color: var(--lilac);
+        }
+        /* =========================================================
+           TEXTO DO CARD
+        ========================================================== */
+        
+        .card h3 {
+            margin-top: 26px;
+            max-width: 220px;
+            color: var(--brown);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 29px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .city-name {
+            margin-top: 8px;
+            color: var(--brown-soft);
+            font-size: 10px;
+            font-weight: 700;
+        }
+        
+        .card-description {
+            max-width: 300px;
+            margin-top: 15px;
+            color: var(--brown-light);
+            font-size: 10px;
+            line-height: 1.65;
+        }
+        
+        .card-footer {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .tag {
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .58);
+            color: var(--brown-soft);
+            font-size: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        
+        .arrow {
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .72);
+            color: var(--brown-soft);
+            font-size: 12px;
+            transition: .25s var(--ease);
+        }
+        
+        .card:hover .arrow {
+            transform: translate(2px, -2px);
+            background: white;
+        }
+        /* =========================================================
+           FAIXA FINAL
+        ========================================================== */
+        
+        .bottom-banner {
+            margin: 0 42px 42px;
+            padding: 25px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            border-radius: 20px;
+            background: linear-gradient( 135deg, #ecdbea, #f6d9df);
+            border: 1px solid rgba(112, 87, 98, .08);
+        }
+        
+        .bottom-banner small {
+            color: #856b86;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+        
+        .bottom-banner strong {
+            display: block;
+            margin-top: 5px;
+            color: var(--brown);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 400;
+        }
+        
+        .bottom-banner p {
+            max-width: 360px;
+            color: var(--brown-soft);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+        /* =========================================================
+           MODAL
+        ========================================================== */
+        
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(57, 42, 50, .50);
+            backdrop-filter: blur(10px);
+        }
+        
+        .overlay.show {
+            display: flex;
+        }
+        
+        .modal {
+            position: relative;
+            width: min(620px, 100%);
+            padding: 38px;
+            border-radius: 27px;
+            background: linear-gradient( 145deg, #fffaf5, #fff0e3);
+            border: 1px solid rgba(255, 255, 255, .75);
+            box-shadow: 0 30px 90px rgba(40, 25, 32, .25);
+            animation: modalIn .35s var(--ease);
+        }
+        
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-line {
+            width: 52px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient( 90deg, var(--pink), var(--lilac));
+            margin-bottom: 23px;
+        }
+        
+        .modal h2 {
+            color: var(--brown);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        
+        .modal small {
+            display: block;
+            margin-top: 8px;
+            color: var(--lilac);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+        
+        .modal p {
+            margin-top: 20px;
+            color: var(--brown-soft);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        
+        .modal-city {
+            display: inline-flex;
+            margin-top: 20px;
+            padding: 8px 11px;
+            border-radius: 999px;
+            background: var(--pink-soft);
+            color: #9a6578;
+            font-size: 9px;
+            font-weight: 800;
+        }
+        
+        .close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: white;
+            color: var(--brown-soft);
+            font-size: 19px;
+            cursor: pointer;
+            transition: .25s var(--ease);
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+            background: var(--pink-soft);
+        }
+        /* =========================================================
+           RESPONSIVO
+        ========================================================== */
+        
+        @media (max-width: 1050px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-map {
+                min-height: 360px;
+            }
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .page {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+            .top {
+                padding: 15px;
+            }
+            .hero {
+                margin: 13px;
+                border-radius: 23px;
+            }
+            .hero-main {
+                padding: 35px 25px;
+            }
+            .hero h1 {
+                font-size: 48px;
+            }
+            .hero-map {
+                min-height: 320px;
+                padding: 25px;
+            }
+            .map-shape {
+                width: 260px;
+                height: 260px;
+            }
+            .intro-row {
+                display: block;
+                margin: 35px 20px 20px;
+            }
+            .intro-copy {
+                margin-top: 12px;
+                text-align: left;
+            }
+            .filters {
+                margin: 0 20px 20px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px 30px;
+            }
+            .card {
+                min-height: 290px;
+            }
+            .bottom-banner {
+                margin: 0 20px 25px;
+                display: block;
+            }
+            .bottom-banner p {
+                margin-top: 10px;
+            }
+        }
+        
+        @media (max-width: 430px) {
+            .brand-mini-text {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 42px;
+            }
+            .city {
+                font-size: 8px;
+            }
+            .map-shape {
+                width: 230px;
+                height: 230px;
+            }
+            .santo-andre {
+                left: 10%;
+            }
+            .sao-bernardo {
+                right: 4%;
+            }
+            .sao-caetano {
+                left: 10%;
+            }
+            .diadema {
+                right: 5%;
+            }
+            .maua {
+                left: 36%;
+            }
+            .ribeirao {
+                right: 2%;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================================
+             TOPO
+        ====================================================== -->
+
+        <header class="top">
+
+            <div class="brand-mini">
+
+                <div class="brand-circle">
+                    E
+                </div>
+
+                <div class="brand-mini-text">
+
+                    <strong>
+                        Elas Empreendedoras
+                    </strong>
+
+                    <span>
+                        Negócios que inspiram
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="back" onclick="window.location.href='Home.html'">
+                ←
+                Voltar ao início
+            </button>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-main">
+
+                <div class="eyebrow">
+                    ABC Paulista
+                </div>
+
+
+                <h1>
+                    Quem está
+                    <em>movendo</em> a região.
+                </h1>
+
+
+                <p class="hero-text">
+
+                    O ABC Paulista reúne empresas, negócios locais, espaços de inovação e iniciativas que ajudam a transformar a economia da região.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button class="button-main" onclick="document.getElementById('empresas').scrollIntoView()">
+                        Explorar empresas
+                    </button>
+
+
+                    <button class="button-light" onclick="document.getElementById('empresas').scrollIntoView()">
+                        Ver cidades
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <aside class="hero-map">
+
+                <div class="map-title">
+                    Região do ABC
+                </div>
+
+
+                <div class="map-shape"></div>
+
+
+                <div class="map-label">
+
+                    <strong>
+                        ABC
+                    </strong>
+
+                    <span>
+                        Polo empresarial
+                    </span>
+
+                </div>
+
+
+                <div class="city santo-andre">
+                    Santo André
+                </div>
+
+
+                <div class="city sao-bernardo">
+                    São Bernardo
+                </div>
+
+
+                <div class="city sao-caetano">
+                    São Caetano
+                </div>
+
+
+                <div class="city diadema">
+                    Diadema
+                </div>
+
+
+                <div class="city maua">
+                    Mauá
+                </div>
+
+
+                <div class="city ribeirao">
+                    Ribeirão Pires
+                </div>
+
+            </aside>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TÍTULO DA SEÇÃO
+        ====================================================== -->
+
+        <section id="empresas" class="intro-row">
+
+            <div>
+
+                <div class="intro-label">
+                    Negócios em destaque
+                </div>
+
+                <h2>
+                    O ABC em movimento
+                </h2>
+
+            </div>
+
+
+            <p class="intro-copy">
+
+                Conheça empresas e iniciativas que fazem parte do cenário econômico, industrial, comercial e tecnológico da região.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FILTROS
+        ====================================================== -->
+
+        <div class="filters">
+
+            <button class="filter active" onclick="filtrar('Todos', this)">
+                Todos
+            </button>
+
+            <button class="filter" onclick="filtrar('Indústria', this)">
+                Indústria
+            </button>
+
+            <button class="filter" onclick="filtrar('Comércio', this)">
+                Comércio
+            </button>
+
+            <button class="filter" onclick="filtrar('Inovação', this)">
+                Inovação
+            </button>
+
+            <button class="filter" onclick="filtrar('Serviços', this)">
+                Serviços
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             CARDS
+        ====================================================== -->
+
+        <section class="grid">
+
+
+
+            <article class="card" data-category="Serviços" data-title="Coop" data-subtitle="São Bernardo do Campo" data-description="A Coop é uma rede varejista tradicional do ABC Paulista, com atuação em supermercados, drogarias e outros serviços." data-type="Serviços"
+                onclick="abrir(this)">
+
+                <span class="card-number">
+                    01
+                </span>
+
+
+                <div class="card-icon">
+                    C
+                </div>
+
+
+                <h3>
+                    Coop
+                </h3>
+
+
+                <div class="city-name">
+                    São Bernardo do Campo
+                </div>
+
+
+                <p class="card-description">
+
+                    Rede varejista tradicional, presente no cotidiano de diferentes comunidades da região.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Serviços
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card" data-category="Indústria" data-title="Termomecanica" data-subtitle="São Bernardo do Campo" data-description="A Termomecanica é uma empresa industrial tradicional de São Bernardo do Campo, conhecida por sua atuação no setor metalúrgico."
+                data-type="Indústria" onclick="abrir(this)">
+
+                <span class="card-number">
+                    02
+                </span>
+
+
+                <div class="card-icon">
+                    T
+                </div>
+
+
+                <h3>
+                    Termomecanica
+                </h3>
+
+
+                <div class="city-name">
+                    São Bernardo do Campo
+                </div>
+
+
+                <p class="card-description">
+
+                    Uma referência industrial ligada à tradição metalúrgica da região.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Indústria
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card" data-category="Indústria" data-title="Scania" data-subtitle="São Bernardo do Campo" data-description="A Scania possui uma importante operação industrial em São Bernardo do Campo e integra o cenário empresarial da região." data-type="Indústria"
+                onclick="abrir(this)">
+
+                <span class="card-number">
+                    03
+                </span>
+
+
+                <div class="card-icon">
+                    S
+                </div>
+
+
+                <h3>
+                    Scania
+                </h3>
+
+
+                <div class="city-name">
+                    São Bernardo do Campo
+                </div>
+
+
+                <p class="card-description">
+
+                    Uma presença industrial de grande relevância dentro do cenário empresarial do ABC.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Indústria
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card" data-category="Comércio" data-title="Mauá Plaza Shopping" data-subtitle="Mauá" data-description="O Mauá Plaza Shopping integra o comércio da região e reúne diferentes empresas e empreendedores em um espaço de consumo e negócios."
+                data-type="Comércio" onclick="abrir(this)">
+
+                <span class="card-number">
+                    04
+                </span>
+
+
+                <div class="card-icon">
+                    M
+                </div>
+
+
+                <h3>
+                    Mauá Plaza
+                </h3>
+
+
+                <div class="city-name">
+                    Mauá
+                </div>
+
+
+                <p class="card-description">
+
+                    Um dos espaços que movimentam o comércio e o consumo na cidade de Mauá.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Comércio
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card" data-category="Comércio" data-title="Grand Plaza Shopping" data-subtitle="Santo André" data-description="O Grand Plaza Shopping é um importante centro comercial de Santo André e reúne diversas marcas e operações empresariais." data-type="Comércio"
+                onclick="abrir(this)">
+
+                <span class="card-number">
+                    05
+                </span>
+
+
+                <div class="card-icon">
+                    G
+                </div>
+
+
+                <h3>
+                    Grand Plaza
+                </h3>
+
+
+                <div class="city-name">
+                    Santo André
+                </div>
+
+
+                <p class="card-description">
+
+                    Um centro comercial que reúne marcas, serviços e diferentes operações empresariais.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Comércio
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="card" data-category="Inovação" data-title="Parque Tecnológico de Santo André" data-subtitle="Santo André" data-description="O Parque Tecnológico de Santo André integra iniciativas relacionadas a inovação, tecnologia, empreendedorismo e desenvolvimento econômico."
+                data-type="Inovação" onclick="abrir(this)">
+
+                <span class="card-number">
+                    06
+                </span>
+
+
+                <div class="card-icon">
+                    P
+                </div>
+
+
+                <h3>
+                    Parque Tecnológico
+                </h3>
+
+
+                <div class="city-name">
+                    Santo André
+                </div>
+
+
+                <p class="card-description">
+
+                    Um espaço ligado à inovação, tecnologia e desenvolvimento econômico regional.
+
+                </p>
+
+
+                <div class="card-footer">
+
+                    <span class="tag">
+                        Inovação
+                    </span>
+
+                    <span class="arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BANNER FINAL
+        ====================================================== -->
+
+        <section class="bottom-banner">
+
+            <div>
+
+                <small>
+                    Identidade regional
+                </small>
+
+                <strong>
+                    Empreender também é criar território.
+                </strong>
+
+            </div>
+
+
+            <p>
+
+                O desenvolvimento de uma região acontece quando empresas, pessoas, ideias e oportunidades se encontram.
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL
+    ========================================================== -->
+
+    <div class="overlay" id="overlay">
+
+        <div class="modal">
+
+
+            <button class="close" onclick="fechar()" aria-label="Fechar">
+                ×
+            </button>
+
+
+            <div class="modal-line"></div>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <small id="modalSubtitle"></small>
+
+
+            <p id="modalDescription"></p>
+
+
+            <span class="modal-city" id="modalType"></span>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        /* =========================================================
+                   MODAL
+                ========================================================== */
+
+        function abrir(card) {
+
+            document.getElementById("modalTitle").textContent =
+                card.dataset.title;
+
+            document.getElementById("modalSubtitle").textContent =
+                card.dataset.subtitle;
+
+            document.getElementById("modalDescription").textContent =
+                card.dataset.description;
+
+            document.getElementById("modalType").textContent =
+                card.dataset.type;
+
+            document
+                .getElementById("overlay")
+                .classList.add("show");
+
+        }
+
+
+        function fechar() {
+
+            document
+                .getElementById("overlay")
+                .classList.remove("show");
+
+        }
+
+
+        document
+            .getElementById("overlay")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (event.target === this) {
+
+                        fechar();
+
+                    }
+
+                }
+            );
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    fechar();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           FILTRO
+        ========================================================== */
+
+        function filtrar(categoria, botao) {
+
+            document
+                .querySelectorAll(".filter")
+                .forEach(function(item) {
+
+                    item.classList.remove("active");
+
+                });
+
+
+            botao.classList.add("active");
+
+
+            document
+                .querySelectorAll(".card")
+                .forEach(function(card) {
+
+                    const pertence =
+                        categoria === "Todos" ||
+                        card.dataset.category === categoria;
+
+
+                    if (pertence) {
+
+                        card.style.display =
+                            "block";
+
+                    } else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                });
+
+        }
+    </script>
+
+
+</body>
+
+</html>
